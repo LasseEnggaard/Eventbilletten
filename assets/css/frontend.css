@@ -1,0 +1,55 @@
+.jg-filter,.jg-ticket,.jg-ticket *{ font-family:sans-serif; }
+.jg-filter{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:20px; }
+.jg-filter-btn{ padding:8px 18px; border:2px solid #ddd; border-radius:25px; background:#fff; color:#555; font-size:14px; cursor:pointer; transition:all .2s; }
+.jg-filter-btn:hover{ color:#000 !important; background:#fff !important; }
+.jg-filter-btn.active,.jg-filter-btn.active:hover{ background:var(--eventbilletten-btn) !important; border-color:var(--eventbilletten-btn); color:#fff !important; }
+.jg-ticket{ display:flex; justify-content:space-between; align-items:center; padding:30px 0; margin:0; border-top:1px solid #ebebeb; gap:24px; box-sizing:border-box; }
+.jg-ticket:last-child{ border-bottom:1px solid #ebebeb; }
+.jg-ticket-img{ position:relative; width:250px; flex-shrink:0; overflow:hidden; border-radius:12px; align-self:center; box-shadow:0 4px 14px rgba(0,0,0,.10); }
+.jg-ticket-img:before{ content:""; display:block; padding-top:37.14%; }
+.jg-list-wrap .jg-ticket-img img{ position:absolute; top:0; left:0; width:100%; height:100%; max-width:none; object-fit:cover; object-position:center; display:block; transition:transform .3s; }
+.jg-list-wrap .jg-ticket-img img:hover{ transform:scale(1.04); }
+.jg-ticket-left{ min-width:150px; flex-shrink:0; display:flex; flex-direction:column; justify-content:center; }
+.jg-ticket-middle{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+.jg-ticket-right{ flex-shrink:0; display:flex; align-items:center; }
+.jg-date-line{ display:flex; align-items:baseline; gap:7px; white-space:nowrap; }
+.jg-date-main{ color:var(--eventbilletten-date); font-size:28px; font-weight:800; letter-spacing:-0.5px; line-height:1.15; }
+.jg-year{ font-size:14px; color:#777; font-weight:500; }
+.jg-date-sub{ font-size:14px; color:#555; margin-top:2px; }
+.jg-ticket h3.jg-title{ font-size:17px; font-weight:700; color:var(--eventbilletten-title); line-height:1.3; margin:0 0 2px; padding:0; text-transform:none; letter-spacing:0; }
+.jg-city{ font-size:14px; color:#555; font-weight:500; }
+.jg-address{ font-size:13px; color:#888; margin-top:2px; }
+.jg-zip{ font-size:12px; color:#aaa; }
+.jg-readmore,.jg-readmore-link{ display:inline-block; align-self:flex-start; margin-top:6px; font-size:14px; color:var(--eventbilletten-date) !important; cursor:pointer; text-decoration:none !important; background:none; border:0; padding:0; letter-spacing:.2px; }
+.jg-readmore:hover,.jg-readmore-link:hover{ text-decoration:underline !important; }
+.jg-btn{ border:2px solid var(--eventbilletten-btn); color:var(--eventbilletten-btn) !important; background:transparent; padding:9px 22px; border-radius:999px; text-decoration:none !important; white-space:nowrap; display:inline-block; font-weight:600; font-size:13px; letter-spacing:.4px; transition:background .2s,color .2s,transform .15s; }
+.jg-btn:hover{ background:var(--eventbilletten-btn); color:#fff !important; transform:translateY(-1px); }
+.jg-empty{ padding:24px 0; color:#777; }
+#jg-popup{ display:none; position:fixed; inset:0; background:rgba(0,0,0,.6); align-items:center; justify-content:center; z-index:99999; }
+#jg-popup.open{ display:flex; }
+.jg-popup-box{ background:#fff; padding:30px; max-width:700px; width:90%; max-height:80%; overflow:auto; border-radius:10px; position:relative; }
+.jg-popup-close{ position:absolute; top:10px; right:15px; cursor:pointer; font-size:20px; background:none; border:0; padding:4px; line-height:1; color:#333; }
+.jg-list-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+.jg-list-grid.jg-cols-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+.jg-list-grid.jg-cols-4{ grid-template-columns:repeat(4,minmax(0,1fr)); }
+.jg-list-grid .jg-ticket{ flex-direction:column; align-items:stretch; justify-content:flex-start; gap:0; padding:0; border:1px solid #ebebeb; border-radius:14px; overflow:hidden; background:#fff; }
+.jg-list-grid .jg-ticket-img{ order:-1; flex:0 0 auto; align-self:stretch; width:100%; border-radius:0; box-shadow:none; }
+.jg-list-grid .jg-ticket-left,.jg-list-grid .jg-ticket-middle,.jg-list-grid .jg-ticket-right{ box-sizing:border-box; width:100%; min-width:0; justify-content:flex-start; }
+.jg-list-grid .jg-ticket-left{ padding:18px 20px 0; }
+.jg-list-grid .jg-ticket-middle{ flex:0 0 auto; padding:10px 20px 20px; }
+.jg-list-grid .jg-ticket-right{ margin-top:auto; padding:0 20px 20px; }
+.jg-list-grid .jg-date-main{ font-size:24px; }
+.jg-list-grid .jg-btn{ width:100%; text-align:center; padding:11px 20px; box-sizing:border-box; }
+@media (max-width:900px){
+    .jg-list-grid,.jg-list-grid.jg-cols-4{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:680px){
+    .jg-ticket{ flex-wrap:wrap; padding:24px 0; gap:14px; }
+    .jg-ticket-img{ width:100%; border-radius:10px; order:-1; }
+    .jg-ticket-left,.jg-ticket-middle,.jg-ticket-right{ min-width:0; width:100%; }
+    .jg-date-main{ font-size:22px; }
+    .jg-btn{ width:100%; text-align:center; padding:11px 20px; box-sizing:border-box; }
+    .jg-filter{ gap:6px; }
+    .jg-filter-btn{ font-size:13px; padding:7px 14px; }
+    .jg-list-grid,.jg-list-grid.jg-cols-2,.jg-list-grid.jg-cols-4{ grid-template-columns:1fr; gap:18px; }
+}
